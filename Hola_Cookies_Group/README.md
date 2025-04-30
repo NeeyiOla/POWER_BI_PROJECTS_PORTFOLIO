@@ -199,7 +199,7 @@ What is the general approach in creating this solution from start to finish
 - Structured the data into a star schema, linking fact and dimension tables (Customer, Product, Store, Transaction).
 - Ensured relationships support accurate cross-table filtering and aggregation.
 
-    ![Hola data model](Assets_Folder/Images/Hola_Data_Model.png)
+    ![Hola data model](Images/Hola_Data_Model.png)
 
   From the above Power BI data model pane image above we can see that a many to one (*:1) was establish between the Transaction table (The Fact Table) and Dimensions Table (Product, Customer, and date table).The other tables shown are the Dax measure and measure documentation tables.  
 
@@ -236,7 +236,7 @@ What is the general approach in creating this solution from start to finish
 
 ### DASHBOARD 1: SALES PULSE - PERFORMANCE, FREQUENCY & RETURN (Executive Overview)
 
-![Dashboard 1](Assets_Folder/Images/Dashboard_1.gif)
+![Dashboard 1](Images/Dashboard_1.gif)
 
 #### KPI CARDS (Top Section)
 - Total Sales (£4.4M):  
@@ -295,7 +295,7 @@ What is the general approach in creating this solution from start to finish
 
 ### DASHBOARD 2: SALES PERFORMANCE & CUSTOMER BEHAVIOUR DASHBOARD (Net sales by Customer Demographic)
 
-![Dashboard 2](Assets_Folder/Images/Dashboard_2.gif)  
+![Dashboard 2](Images/Dashboard_2.gif)  
 
 Goal: The dashboard analyses net sales by gender and customer demographics, return behaviour, geography, and purchasing patterns.
 
@@ -372,7 +372,7 @@ Insight: Young adults (especially 31–35) are most likely to make repeated purc
 
 ### DASHBOARD 3: HOLA PRODUCT PORTFOLIO PERFORMANCE (Based on Gross Profit)
 
-![Dashboard 3](Assets_Folder/Images/Dashboard_3.gif)
+![Dashboard 3](Images/Dashboard_3.gif)
 
 #### KPI Cards (Top Section): 
 Indicates net earnings from sales after subtracting costs, highlighting profitability for each cookies category.
