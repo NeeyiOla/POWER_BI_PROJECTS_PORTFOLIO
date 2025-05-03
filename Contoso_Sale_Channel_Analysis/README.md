@@ -101,7 +101,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 
     ## Add a picture of each table and ERD diagram, but mainly picture of tables that was used.
 
-- DimProductCategory Table: Including ProductCategoryDecription, ProductCategoryKey, ProductCategoryLabel, and ProductCategoryName.
+- DimProductCategory Table: Including ProductCategoryDecription, ProductCategoryKey, ProductCategoryLabel, and ProductCategoryName.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | ProductSubCategoryDescription | Text | short note to describe the product subCategory |
 | ProductCategoryKey | Whole Number | Foreign key referencing  product category table (ProductCategoryKey) |
 
-- DimProduct Table: AvailableForSaleDate, BrandName, ColorID, ColorName, Manufacturer, ProductDescription, ProductKey, ProductLabel, and ProductName.
+- DimProduct Table: AvailableForSaleDate, BrandName, ColorID, ColorName, Manufacturer, ProductDescription, ProductKey, ProductLabel, and ProductName.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -141,7 +141,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | Status | Text | (Delete) not needed |
 
 
-- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate.
+- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -152,7 +152,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | LoadDate | Date/Time | (delete) not needed |
 | UpdateDate | Date/Time | (delete) not needed |
 
-- FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.
+- FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -179,7 +179,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | Gross_Margin | Fixed decimal number | Difference between sales and total cost amount |
 
 
-- DimGeography Table:  ContinentName, GeographyKey, Region-State/Province, RegionCountryName, StateProvinceName.
+- DimGeography Table:  ContinentName, GeographyKey, Region-State/Province, RegionCountryName, StateProvinceName.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -188,7 +188,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | SateProvinceName | Text | store or customer Continent Name |
 | RegionCountryName | Text | store or customer countryname |
 
-- Date Table: Date, FY-Month, FY-Quarters, FY-Year, Month, Month Name, Month-Short, Month-VSH, Period, Quarter, and Year.
+- Date Table: Date, FY-Month, FY-Quarters, FY-Year, Month, Month Name, Month-Short, Month-VSH, Period, Quarter, and Year.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -204,7 +204,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | FY - Quarter | Whole Number |  Fiscal year quarter |
 
 
-- DimStore Table: AddressLine1, CloseDate, EmployeeCount, GeographyKey, Geolocation, Geometry, LastRemodelDate, OpenDate, Satus, StoreKey, StoreManager, StoreNmae, and Storetype.
+- DimStore Table: AddressLine1, CloseDate, EmployeeCount, GeographyKey, Geolocation, Geometry, LastRemodelDate, OpenDate, Satus, StoreKey, StoreManager, StoreNmae, and Storetype.  
 
 | Column Name | Data Type | Description |
 | --- | --- | --- |
@@ -219,7 +219,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | AdressLine1 | Text | Address to the sotres |
 | EmployeeCount | Whole Number | Total number of employee for each store |
 | GeoLocation | Text | Longitude and Latitude point of each store Location |
-| Geometery | Text | longitude or latitude point of each store location |
+| Geometery | Text | longitude or latitude point of each store location |  
 
 This table is not need for now but for future purpose is would be needed so in that case while cleaning transforming data, the table would not be loaded in the report pane.
 
