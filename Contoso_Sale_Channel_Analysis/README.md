@@ -101,6 +101,36 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 
     ## Add a picture of each table and ERD diagram, but mainly picture of tables that was used.
 
+#### Fact Table
+- FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.  
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| StoreKey | Whole Number | (Delete) not needed |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| ProductKey | Whole Number | Forforeign key referencing product table (Productkey) |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| UnitCost | Fixed decimal number | Cost per product sold |
+| UnitPrice | Fixed decimal number | unit price per product sold |
+| SalesQuantity | Whole Number | qauntity of product sold |
+| ReturnedQuantity | Whole Number | Quantity of product sold amount returned |
+| ReturnedQuantity | Fixed decimal number | Returned Sold Amount |
+| DiscountQuantity | Whole Number | qauntity of product that is being discounted |
+| DiscountAmount | Fixed decimal number | amount on discounted qauntity |
+| TotalCost | Fixed decimal number | cost of goods sold |
+| Sales | fixed decimal number | products qauntity sales |
+| Gross_Margin | Fixed decimal number | Difference between sales and total cost amount | 
+
+
+#### Dimension Tables
+
 - DimProductCategory Table: Including ProductCategoryDecription, ProductCategoryKey, ProductCategoryLabel, and ProductCategoryName.  
 
 | Column Name | Data Type | Description |
@@ -155,33 +185,6 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | UpdateDate | Date/Time | (delete) not needed |  
 
 
-- FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.  
-
-| Column Name | Data Type | Description |
-| --- | --- | --- |
-| SalesKey | Whole Number | Unique Identifier of each sales |
-| DateKey | Date | Date of each sales |
-| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
-| StoreKey | Whole Number | (Delete) not needed |
-| SalesKey | Whole Number | Unique Identifier of each sales |
-| DateKey | Date | Date of each sales |
-| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
-| ProductKey | Whole Number | Forforeign key referencing product table (Productkey) |
-| SalesKey | Whole Number | Unique Identifier of each sales |
-| DateKey | Date | Date of each sales |
-| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
-| UnitCost | Fixed decimal number | Cost per product sold |
-| UnitPrice | Fixed decimal number | unit price per product sold |
-| SalesQuantity | Whole Number | qauntity of product sold |
-| ReturnedQuantity | Whole Number | Quantity of product sold amount returned |
-| ReturnedQuantity | Fixed decimal number | Returned Sold Amount |
-| DiscountQuantity | Whole Number | qauntity of product that is being discounted |
-| DiscountAmount | Fixed decimal number | amount on discounted qauntity |
-| TotalCost | Fixed decimal number | cost of goods sold |
-| Sales | fixed decimal number | products qauntity sales |
-| Gross_Margin | Fixed decimal number | Difference between sales and total cost amount |  
-
-
 - DimGeography Table:  ContinentName, GeographyKey, Region-State/Province, RegionCountryName, StateProvinceName.  
 
 | Column Name | Data Type | Description |
@@ -190,22 +193,6 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | ContinentName | Text | Continent of each customers |
 | SateProvinceName | Text | store or customer Continent Name |
 | RegionCountryName | Text | store or customer countryname |  
-
-
-- Date Table: Date, FY-Month, FY-Quarters, FY-Year, Month, Month Name, Month-Short, Month-VSH, Period, Quarter, and Year.  
-
-| Column Name | Data Type | Description |
-| --- | --- | --- |
-| Date | Date | Full date of day/Month/Year and a unique identifier  |
-| Year | Whole Number | Calendar year |
-| Month | Whole Number | month number of calendar year |
-| Month Name | Text | Month name of calendar name |
-| Quarter | Whole Number | Quarter of calendar year |
-| Month Short | Text | Uses the first three character of each month |
-| Period |  Text | Combination of year and month of the year |
-| FY - Month | Whole Number | Fiscal year month  |
-| FY - Year | Whole Number | Fiscal year |
-| FY - Quarter | Whole Number |  Fiscal year quarter |  
 
 
 - DimStore Table: AddressLine1, CloseDate, EmployeeCount, GeographyKey, Geolocation, Geometry, LastRemodelDate, OpenDate, Satus, StoreKey, StoreManager, StoreNmae, and Storetype.  
@@ -226,7 +213,23 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | Geometery | Text | longitude or latitude point of each store location |  
 
 
-This table is not need for now but for future purpose is would be needed so in that case while cleaning transforming data, the table would not be loaded in the report pane.
+This table is not needed for now but for future purpose is would be needed so in that case while cleaning transforming data, the table would not be loaded in the report pane.  
+
+#### Time Intelligence Date Table
+- Date Table: Date, FY-Month, FY-Quarters, FY-Year, Month, Month Name, Month-Short, Month-VSH, Period, Quarter, and Year.  
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| Date | Date | Full date of day/Month/Year and a unique identifier  |
+| Year | Whole Number | Calendar year |
+| Month | Whole Number | month number of calendar year |
+| Month Name | Text | Month name of calendar name |
+| Quarter | Whole Number | Quarter of calendar year |
+| Month Short | Text | Uses the first three character of each month |
+| Period |  Text | Combination of year and month of the year |
+| FY - Month | Whole Number | Fiscal year month  |
+| FY - Year | Whole Number | Fiscal year |
+| FY - Quarter | Whole Number |  Fiscal year quarter |  
 
 ### Benefit of Microsoft SSMS Storage.
 
