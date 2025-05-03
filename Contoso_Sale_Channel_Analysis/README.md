@@ -102,23 +102,120 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
     ## Add a picture of each table and ERD diagram, but mainly picture of tables that was used.
 
 - DimProductCategory Table: Including ProductCategoryDecription, ProductCategoryKey, ProductCategoryLabel, and ProductCategoryName.
-
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| ProductCategoryKey | Whole Number | Unique identifier for each Product Category |
+| ProductCategoryLabel | Text | Deletd |
+| ProductCategoryName | Text | Name of each product category |
+| ProductCategoryDescription | Text | short note to decribe each product category |
 
 - DimProductSubcategory Table: ProductCategoryKey, ProductSubcategoryDescrition, ProductSubcategoryKey, ProductSubcategoryLabel, and ProductSubcategoryName.
-
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| ProductSubCategoryKey | Whole Number | Unique identifier for each Product Subcategory |
+| ProductSubCategoryName | Text | Name of each product subcategory |
+| ProductSubCategoryDescription | Text | short note to describe the product subCategory |
+| ProductCategoryKey | Whole Number | Foreign key referencing  product category table (ProductCategoryKey) |
 
 - DimProduct Table: AvailableForSaleDate, BrandName, ColorID, ColorName, Manufacturer, ProductDescription, ProductKey, ProductLabel, and ProductName.
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| ProductKey | Whole Number | Unique identifier for each product |
+| ProductLabel | Text | (Delete) not needed in this analysis |
+| ProductName | Text | Name of selling product |
+| ProductDescrition | Text | short note of product description |
+| ProductSubcategory | Whole Number | Foreign key referencing product Product Subcategory (ProductSubcategoryKey) |
+| Manufacturer | Text | Manufacturer of contoso products |
+| BrandName | Text | products brand name |
+| ColorID | Text | (Delete) not needed |
+| ColorName | Text | (Delete) not needed |
+| StockTypeID | Whole Number | (Delete) not needed |
+| StockTypeNmae | Text | (Delete) not needed |
+| UnitCost | Fixed decimal number | Cost per product sold |
+| UnitPrice | Fixed decimal number | unit price per product sold |
+| AvailableForSaleDate | Date/Time | (Delete) Date when product would be available for sale |
+| StopSaleDate | (Delete) Date/Time | Date when product is stopped being sold |
+| Status | Text | (Delete) not needed |
 
 
-- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate.
+- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate. 
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| Channelkey | Whole Number | Unique Identifier of each channel |
+| ChannelLabel | Text | (Delete) not needed |
+| ChannelName | Text | name of each Sales channel |
+| ChannelDescription | Text | short note to explain channel further  |
+| LoadDate | Date/Time | (delete) not needed |
+| UpdateDate | Date/Time | (delete) not needed |
 
 - FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| StoreKey | Whole Number | (Delete) not needed |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| ProductKey | Whole Number | Forforeign key referencing product table (Productkey) |
+| SalesKey | Whole Number | Unique Identifier of each sales |
+| DateKey | Date | Date of each sales |
+| ChannelKey | Whole Number | Foreign key referencing channel table (ChannelKey) |
+| UnitCost | Fixed decimal number | Cost per product sold |
+| UnitPrice | Fixed decimal number | unit price per product sold |
+| SalesQuantity | Whole Number | qauntity of product sold |
+| ReturnedQuantity | Whole Number | Quantity of product sold amount returned |
+| ReturnedQuantity | Fixed decimal number | Returned Sold Amount |
+| DiscountQuantity | Whole Number | qauntity of product that is being discounted |
+| DiscountAmount | Fixed decimal number | amount on discounted qauntity |
+| TotalCost | Fixed decimal number | cost of goods sold |
+| Sales | fixed decimal number | products qauntity sales |
+| Gross_Margin | Fixed decimal number | Difference between sales and total cost amount |
+
 
 - DimGeography Table:  ContinentName, GeographyKey, Region-State/Province, RegionCountryName, StateProvinceName.
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| GeographyKey | Whole number | Unique identifier to DimGeopgraphy |
+| ContinentName | Text | Continent of each customers |
+| SateProvinceName | Text | store or customer Continent Name |
+| RegionCountryName | Text | store or customer countryname |
 
 - Date Table: Date, FY-Month, FY-Quarters, FY-Year, Month, Month Name, Month-Short, Month-VSH, Period, Quarter, and Year.
 
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| Date | Date | Full date of day/Month/Year and a unique identifier  |
+| Year | Whole Number | Calendar year |
+| Month | Whole Number | month number of calendar year |
+| Month Name | Text | Month name of calendar name |
+| Quarter | Whole Number | Quarter of calendar year |
+| Month Short | Text | Uses the first three character of each month |
+| Period |  Text | Combination of year and month of the year |
+| FY - Month | Whole Number | Fiscal year month  |
+| FY - Year | Whole Number | Fiscal year |
+| FY - Quarter | Whole Number |  Fiscal year quarter |
+
+
 - DimStore Table: AddressLine1, CloseDate, EmployeeCount, GeographyKey, Geolocation, Geometry, LastRemodelDate, OpenDate, Satus, StoreKey, StoreManager, StoreNmae, and Storetype.
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| StoreKey | Whole Number | Unique Key Identifier of each store  |
+| GeographyKey | Whole Number | Foreign Key referencing the Geograpgy table (GeographyKey)  |
+| StoreManger | Whole Number | this a number that is attached to each manager |
+| StoreType | Text | Available store type used for sales of goods  |
+| StoreName | Text | Name of each store |
+| Status | Text | This indicate if the store is still active or shutdown |
+| OpenDate | Date/Time | Date the store will shutdown from dervices |
+| ColseDate | Date/Time | Date the store was close for services |
+| AdressLine1 | Text | Address to the sotres |
+| EmployeeCount | Whole Number | Total number of employee for each store |
+| GeoLocation | Text | Longitude and Latitude point of each store Location |
+| Geometery | Text | longitude or latitude point of each store location |
+
+This table is not need for now but for future purpose is would be needed so in that case while cleaning transforming data, the table would not be loaded in the report pane.
 
 ### Benefit of Microsoft SSMS Storage.
 
