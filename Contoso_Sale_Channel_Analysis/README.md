@@ -102,6 +102,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
     ## Add a picture of each table and ERD diagram, but mainly picture of tables that was used.
 
 - DimProductCategory Table: Including ProductCategoryDecription, ProductCategoryKey, ProductCategoryLabel, and ProductCategoryName.
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | ProductCategoryKey | Whole Number | Unique identifier for each Product Category |
@@ -109,7 +110,8 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | ProductCategoryName | Text | Name of each product category |
 | ProductCategoryDescription | Text | short note to decribe each product category |
 
-- DimProductSubcategory Table: ProductCategoryKey, ProductSubcategoryDescrition, ProductSubcategoryKey, ProductSubcategoryLabel, and ProductSubcategoryName.
+- DimProductSubcategory Table: ProductCategoryKey, ProductSubcategoryDescrition, ProductSubcategoryKey, ProductSubcategoryLabel, and ProductSubcategoryName.  
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | ProductSubCategoryKey | Whole Number | Unique identifier for each Product Subcategory |
@@ -118,6 +120,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | ProductCategoryKey | Whole Number | Foreign key referencing  product category table (ProductCategoryKey) |
 
 - DimProduct Table: AvailableForSaleDate, BrandName, ColorID, ColorName, Manufacturer, ProductDescription, ProductKey, ProductLabel, and ProductName.
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | ProductKey | Whole Number | Unique identifier for each product |
@@ -138,7 +141,8 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | Status | Text | (Delete) not needed |
 
 
-- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate. 
+- DimChannel: ChannelDescription, ChannelKey, ChannelLabel, ChannelName, LoadDate, and UpdateDate.
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | Channelkey | Whole Number | Unique Identifier of each channel |
@@ -149,6 +153,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 | UpdateDate | Date/Time | (delete) not needed |
 
 - FactSales Table: ChaneelKey, DateKey, DiscountAmount, DiscountQuantity, Gross Profit, Gross-Margin, Net Sales, ProductKey, Profit Margin, ReturnAmount, ReturnQauntity, Sales, SalesQuantity, StoreKey, Subcategory_Channel, TotalCost, UnitCost, and UnitPrice.
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | SalesKey | Whole Number | Unique Identifier of each sales |
@@ -175,6 +180,7 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 
 
 - DimGeography Table:  ContinentName, GeographyKey, Region-State/Province, RegionCountryName, StateProvinceName.
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | GeographyKey | Whole number | Unique identifier to DimGeopgraphy |
