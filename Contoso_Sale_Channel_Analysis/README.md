@@ -2,7 +2,7 @@
 
 ## Contoso Retail: Competitive Sales Channel & Marketing Analysis
 
-![Front Page Cover Images](Images/Microsoft_SSMS_to_PowerBI.png)
+![Front Page Cover Images](Images/Database_to_PowerBI.png)
 
 # Table of Content
 - [Project Title](#Project-Title)
@@ -233,6 +233,62 @@ This table is not needed for now but for future purpose is would be needed so in
 
 ### Benefit of Microsoft SSMS Storage.
 
+# Methodology
+### Tools Used
+- Microsoft SSMS
+- Power BI Desktop
+- Power Query
+- DAX
+
+  ### Development
+
+  - Connected SQL database sources to Power BI
+  - 
+  - Performed ETL with Power Query (Using direct Query)
+  - Cleaned  and joined tables using keys
+  - Built star schema with proper cardinality
+  - Created a Data table for time intelligence
+  - Developed DAX KPI's (Revenue, Margin, Growth, etc.)
+
+
+  ### ETL Process
+
+  - Extract: Pulled data from SQL Server
+  - Transformed: Renamed, cleaned, joined, added calculated fields (e.g ROI, nET Sales)
+  - Load: Loaded into Power BI with schema integrity.
+ 
+
+### Data Modelling 
+
+- Star schema with FactSales at the center
+- Dim tables joined via surrogate keys
+- One-to-many relationships maintained
+- Calendar table used for slicing and trends
+  
+### DAX Measures Created
+
+- Total Sales = SUM(FactSales[SalesAmount])
+- Gross Profit = SUM(FactSales[GrossProfit])
+- Profit Margin = DIVIDE([Gross Profit], [Total Sales])
+- Net Sales = [Total Sales] - SUM(FactSales[ReturnAmount])
+- YoY Sales = [Total Sales CY] - [Total Sales PY]
+- ROI = DIVIDE([Gross Profit], SUM(FactSales[DiscountAmount]))
+
+### Analysis  
+
+- Channel performance analysis (e.g., Online vs Reseller)
+- Profit Margin trends by product subcategory and region
+- YoY changes to evaluate performance trajectory
+- Customer geography impact on sales volumes
+- Seasonal patterns in Catalog profitability
+
+### Visualization
+
+- KPI Cards (Total Sales, YoY Change, Channel Sales)
+- Donut & Bar Charts (Sales by Channel, Product)
+- Geo Maps (Sales by Country & Region)
+- Line Charts (Sales & Profit over Time)
+- Tree Maps (Brand-wise Sales Split)
 
 
 
