@@ -251,18 +251,63 @@ Used to host the documentation, project files (e.g., .pbix, .sql, .md), and prov
 
   ### Development
 
-  What is the general approach in creating this solution from start to finish
+General Approach to Creating the Solution:  
 
-  - Connected SQL database sources to Power BI (using the direct query)
-  - Performed ETL with Power Query 
-  - Cleaned  and joined tables using keys
-  - Built star schema with proper cardinality
-  - Created a Data table for time intelligence
-  - Developed DAX KPI's (Revenue, Margin, Growth, etc.)
-  - Designed and published 3 interactive dashboards
-  - Document every process and commentary
-  - Built and publish interactive dashboards in Power BI service.
-  - Publish the project to GitHub respistory and Pages.
+  - Project Planning & Requirement Gathering
+
+      - Defined project scope and objectives (e.g., analyse csales channel performance,  product profitability, and geographical and sales trends).
+      - Identified key stakeholders (Sales, Marketing, and Executives) and gathered reporting requirements and KPIs.  
+- Data Source Setup and Access  
+
+    - Microsoft SQL Server was used to host the primary Contoso dataset.
+    - Connected Power BI Desktop to SQL Server using DirectQuery to enable real-time data access.
+    - Identified and extracted essential tables such as FactSales, DimChannel, DimProduct, DimGeography, and Date.
+
+- Data Exploration & Profiling  
+
+    - Reviewed data structures, row volumes, null values, duplicates, and relationships.
+    - Verified foreign key integrity across fact and dimension tables.
+    - Identified the appropriate grain of analysis (e.g., sales transactions per channel, date, and product).
+
+- ETL Process Using Power Query  
+
+    - Cleaned and transformed data using Power Query within Power BI Desktop.
+    - Applied business rules such as standardizing product labels, calculating derived columns (e.g., ROI, Net Sales), and removing unnecessary fields.
+    - Joined related tables for initial dimensional shaping.
+
+- Data Modelling  
+
+    - Built a star schema by establishing relationships between the fact table (FactSales) and relevant dimension tables.
+    - Ensured appropriate cardinality (e.g., many-to-one) and cross-filter directions.
+    - Added a dynamic date dimension for robust time intelligence.
+
+- Measure Development Using DAX  
+
+    - Created key DAX measures for KPIs: Total Sales, Profit Margin, YoY Sales, ROI, Gross Profit, etc.
+    - Used calculated columns and measures to support visuals requiring trend analysis, comparisons, and percentage breakdowns.
+
+- Dashboard Design & Visualization
+
+    - Designed three themed dashboards in Power BI Desktop:
+        - Executive Overview (sales trends & KPIs)
+        - Channel & Brand Analysis
+        -Profit Margin Analysis
+    - Incorporated slicers (e.g., Year, Channel, Product) for interactivity.
+    - Used best practices for visual hierarchy, color consistency, and user-friendly layout.
+
+- Publishing and Collaboration  
+    - Published the reports to Power BI Service for stakeholder access and automated refresh.
+    - Set up appropriate workspace permissions and dashboard sharing.
+
+- Documentation & Version Control  
+
+    - Documented the entire process including the model schema, DAX measures, and dashboard usage instructions.
+    - Uploaded final .pbix file, SQL scripts, and documentation to GitHub for version control and public portfolio presentation.
+
+- Review & Iteration  
+
+    - Collected feedback from stakeholders and refined visuals and measures accordingly.
+    - Monitored performance and usability, making adjustments to filters, visuals, and tooltips for clarity.
 
 
   ### ETL Process
