@@ -21,12 +21,17 @@
 - [Methodology](#Methodology)
   - [Tool used](#Tool-Used)
   - [Development](#Development)
-  - [ETL Process](#ETL-Process)
-  - [Data Modelling](#Data-modelling)
-  - [DAX Measure Created](#DAX-Measure-created)
-  - [Analysis](#Analysis)
-  - [Visualisation](#Visualisation)
-  - [MOCK UP DASHBOARD](#Mukkup_design_Dashboard)
+      - [Project Planning & Requirement Gathering](#Project-Planning-&-Requirement-Gathering)
+      - [Data Sources Setup and Access](#Data-Sources-Setup-and-Access)
+      - [Data Exploration & Profiling](#Data-Exploration-&-Profiling)
+      - [ETL Process Using Power Query](#ETL-Process-Using-Power-Query)
+      - [Data Modelling](#Data-Modelling)
+      - [Measures Development Using DAX](#Measures-Development-Using-DAX)
+      - [Dashboard Design & Visualisation](#Dashboard-Design-&-Visualisation)
+          - [Mock up Design](#Mukkup_design_Dashboard)
+      - [Publishing and Collaboration](#Publishing-and-Collaboration)
+      - [Documentation & Version Control](#Documentation-&-Version-Control)
+      - [Review & Iteration](#Review-&-Iteration)
 - [Detailed Insights and Recommendations](#Detailed-Insights-and-Recommendation)
   - [Dashboard 1](#Sales-Pulse-Performance,-Frequency-&-Return-(Executive-Overview))
   - [Dashboard 2](#Sales-Performance-&-Customer-Behaviour-(Net-sales-by-Customer-Demographic))
@@ -232,7 +237,8 @@ This table is not needed for now but for future purpose is would be needed so in
 
 ### Benefit of Microsoft SSMS Storage.
 
-# Methodology
+# Methodology  
+
 ### Tools Used
 - Microsoft SQL Server Management Studio (SSMS):
 SSMS was primarily used as a data storage and management tool. A DirectQuery connection was established from Power BI Desktop to the SQL Server database, allowing real-time querying of essential tables (e.g., FactSales, DimChannel, DimProduct, DimGeography, etc.). This approach ensured data freshness and reduced duplication during analysis.
@@ -241,7 +247,7 @@ SSMS was primarily used as a data storage and management tool. A DirectQuery con
 The main tool for creating the data model, writing DAX measures, and building interactive reports. It served as the development environment for all dashboards and calculations.
 
 - Power Query:
-Used within Power BI Desktop for the ETL process—cleaning, shaping, and transforming data after extraction via DirectQuery. Operations included column renaming, deleting unwanted columns, type conversion, table joins, filtering, and calculated columns.
+Used within Power BI Desktop for the ETL process—cleaning, shaping, and transforming data after extraction via DirectQuery. Operations included column renaming, deleting unwanted columns, data type conversion, table joins, filtering, and calculated columns.
 
 - Power Bi Service:
 Dashboards were published to the Power BI Service for stakeholder access, real-time collaboration, and scheduled refresh management. The service also enabled dashboard sharing, mobile access, and usage monitoring.
@@ -249,112 +255,195 @@ Dashboards were published to the Power BI Service for stakeholder access, real-t
 - GitHub:
 Used to host the documentation, project files (e.g., .pbix, .sql, .md), and provide public access for version control and portfolio presentation. It also served as a backup repository and platform to showcase the project in a professional setting.
 
-  ### Development
+### Development
 
 General Approach to Creating the Solution:  
 
-  - Project Planning & Requirement Gathering
+1. Project Planning & Requirement Gathering
+2. Data Exploration & Profiling
+3. Data Exploration & Profiling
+4. ETL Process Using Power Query
+5. Data Modelling
+6. Measure Development Using DAX
+7. Dashboard Design & Visualization
+8. Publishing and Collaboration
+9. Documentation & Version Control
+10. Review & Iteration
 
-      - Defined project scope and objectives (e.g., analyse csales channel performance,  product profitability, and geographical and sales trends).
-      - Identified key stakeholders (Sales, Marketing, and Executives) and gathered reporting requirements and KPIs.  
-- Data Source Setup and Access  
+#### Project Planning & Requirement Gathering
 
-    - Microsoft SQL Server was used to host the primary Contoso dataset.
-    - Connected Power BI Desktop to SQL Server using DirectQuery to enable real-time data access.
-    - Identified and extracted essential tables such as FactSales, DimChannel, DimProduct, DimGeography, and Date.
+- Defined project scope and objectives (e.g., analyse sales channel performance,  product profitability, and geographical and sales trends).
+- Identified key stakeholders (Sales, Marketing, and Executives) and gathered reporting requirements and KPIs.  
+#### Data Source Setup and Access  
 
-- Data Exploration & Profiling  
+- Microsoft SQL Server was used to host the primary Contoso dataset.
+- Connected Power BI Desktop to SQL Server using DirectQuery to enable real-time data access.
+- Identified and extracted essential tables such as FactSales, DimChannel, DimProduct, DimGeography, and Date.
 
-    - Reviewed data structures, row volumes, null values, duplicates, and relationships.
-    - Verified foreign key integrity across fact and dimension tables.
-    - Identified the appropriate grain of analysis (e.g., sales transactions per channel, date, and product).
+####Data Exploration & Profiling  
 
-- ETL Process Using Power Query  
+- Reviewed data structures, row volumes, null values, duplicates, and relationships.
+- Verified foreign key integrity across fact and dimension tables.
+- Identified the appropriate grain of analysis (e.g., sales transactions per channel, date, and product).
 
-    - Cleaned and transformed data using Power Query within Power BI Desktop.
-    - Applied business rules such as standardizing product labels, calculating derived columns (e.g., ROI, Net Sales), and removing unnecessary fields.
-    - Joined related tables for initial dimensional shaping.
+#### ETL Process Using Power Query  
 
-- Data Modelling  
+- Cleaned and transformed data using Power Query within Power BI Desktop.
+- Applied business rules such as standardizing product labels, calculating derived columns (e.g., ROI, Net Sales), and removing unnecessary fields.
+- Joined related tables for initial dimensional shaping.
 
-    - Built a star schema by establishing relationships between the fact table (FactSales) and relevant dimension tables.
-    - Ensured appropriate cardinality (e.g., many-to-one) and cross-filter directions.
-    - Added a dynamic date dimension for robust time intelligence.
+#### Data Modelling  
 
-- Measure Development Using DAX  
+- Built a star schema by establishing relationships between the fact table (FactSales) and relevant dimension tables.
+- Ensured appropriate cardinality (e.g., many-to-one) and cross-filter directions.
+- Added a dynamic date dimension for robust time intelligence.
 
-    - Created key DAX measures for KPIs: Total Sales, Profit Margin, YoY Sales, ROI, Gross Profit, etc.
-    - Used calculated columns and measures to support visuals requiring trend analysis, comparisons, and percentage breakdowns.
+    ##### insight data model image 
 
-- Dashboard Design & Visualization
+From the above Power BI data model pane image above we can see that a many to one (*:1) was establish between the FactSales  (The Fact Table) and Dimensions Table (Product, Customer, and date table).The other tables shown are the Dax measure and measure documentation tables. 
 
-    - Designed three themed dashboards in Power BI Desktop:
-        - Executive Overview (sales trends & KPIs)
-        - Channel & Brand Analysis
-        -Profit Margin Analysis
-    - Incorporated slicers (e.g., Year, Channel, Product) for interactivity.
-    - Used best practices for visual hierarchy, color consistency, and user-friendly layout.
+#### Measure Development Using DAX  
 
-- Publishing and Collaboration  
-    - Published the reports to Power BI Service for stakeholder access and automated refresh.
-    - Set up appropriate workspace permissions and dashboard sharing.
+- Created key DAX measures for KPIs: Total Sales, Profit Margin, YoY Sales, ROI, Gross Profit, etc.
+- Used calculated columns and measures to support visuals requiring trend analysis, comparisons, and percentage breakdowns.
 
-- Documentation & Version Control  
+    ##### Here are some of the Dax measures created to enrich the project insights
 
-    - Documented the entire process including the model schema, DAX measures, and dashboard usage instructions.
-    - Uploaded final .pbix file, SQL scripts, and documentation to GitHub for version control and public portfolio presentation.
+```DAX
+% Return_Quantity = 
+ DIVIDE(
+    SUM(FactSales[ReturnQuantity]),
+    SUM(FactSales[SalesQuantity]),
+    0
+)
+```
+```DAX
+% Total_Cost = 
+DIVIDE(
+    SUM(FactSales[TotalCost]),
+    SUM(FactSales[Sales]),
+    0
+)
+```
+```DAX
+Profit Margin = 
+DIVIDE(
+    SUMX(FactSales, FactSales[Gross Profit]), 
+    SUM(FactSales[Net Sales]), 
+    0
+)
+```
+```DAX
+Profit Margin = 
+DIVIDE(
+    SUMX(FactSales, FactSales[Gross Profit]), 
+    SUM(FactSales[Net Sales]), 
+    0
+)
+```
+```DAX
+Profit Margin % by BrandName = 
+DIVIDE(
+    SUM(FactSales[Gross Profit]), 
+    CALCULATE(SUM(FactSales[Net Sales]), ALL(DimProduct[BrandName])), 
+    0
+)
+```
+```DAX
+Profit Margin % by Channel = 
+DIVIDE(
+    SUM(FactSales[Gross Profit]), 
+    CALCULATE(SUM(FactSales[Net Sales]), ALL('DimChannel'[ChannelName])), 
+    0
+)
+```
+```DAX
+Profit Margin % by Product = 
+DIVIDE(
+    SUM(FactSales[Gross Profit]), 
+    CALCULATE(SUM(FactSales[Net Sales]), ALL('DimProductSubcategory'[ProductSubcategoryName])), 
+    0
+)
+```
+```DAX
+YoY Catalog Store = 
+VAR CurrentYear = MAX('Date'[Year])
+VAR PreviousYr = CurrentYear - 1
+VAR CurrentSales = 
+    CALCULATE(
+        SUM('FactSales'[Sales]),
+        'Date'[Year] = CurrentYear,
+        'DimChannel'[ChannelName] = "Catalog"
+    )
+VAR PreviousSales = 
+    CALCULATE(
+        SUM('FactSales'[Sales]),
+        'Date'[Year]= PreviousYr,
+        'DimChannel'[ChannelName] = "Catalog"
+    )
+RETURN 
+    CurrentSales - PreviousSales
+```
+```DAX
+YoY Catalog Store (%) = 
+VAR CurrentYear = MAX('Date'[Year])
+VAR PreviousYr = CurrentYear - 1
+VAR CurrentSales = 
+    CALCULATE(
+        SUM('FactSales'[Sales]),
+        'Date'[Year] = CurrentYear,
+        'DimChannel'[ChannelName] = "Catalog"
+    )
+VAR PreviousSales = 
+    CALCULATE(
+        SUM('FactSales'[Sales]),
+        'Date'[Year] = PreviousYr,
+        'DimChannel'[ChannelName] = "Catalog"
+    )
+RETURN 
+    IF(
+        PreviousSales <> 0,
+        DIVIDE(CurrentSales - PreviousSales, PreviousSales),
+        BLANK()  // This handles the scenario where there are no previous year sales to compare against.
+    )
+```
 
-- Review & Iteration  
+#### Dashboard Design & Visualization
 
-    - Collected feedback from stakeholders and refined visuals and measures accordingly.
-    - Monitored performance and usability, making adjustments to filters, visuals, and tooltips for clarity.
+- Mockup Design
+- Designed three themed dashboards in Power BI Desktop:
+  - Executive Overview (sales trends & KPIs)
+  - Channel & Brand Analysis
+  - Profit Margin Analysis
+- Incorporated slicers (e.g., Year, Channel, Product) for interactivity.
+- Used best practices for visual hierarchy, color consistency, and user-friendly layout.
+
+#### Publishing and Collaboration  
+- Published the reports to Power BI Service for stakeholder access and automated refresh.
+- Set up appropriate workspace permissions and dashboard sharing.
+
+#### Documentation & Version Control  
+
+- Documented the entire process including the model schema, DAX measures, and dashboard usage instructions.
+- Uploaded final .pbix file, SQL scripts, and documentation to GitHub for version control and public portfolio presentation.
+
+#### Review & Iteration  
+
+- Collected feedback from stakeholders and refined visuals and measures accordingly.
+- Monitored performance and usability, making adjustments to filters, visuals, and tooltips for clarity.
 
 
-  ### ETL Process
-
-  - Extract: Pulled data from SQL Server
-  - Transformed: Renamed, cleaned, joined, added calculated fields (e.g ROI, nET Sales)
-  - Load: Loaded into Power BI with schema integrity.
  
 
-### Data Modelling 
 
-- Star schema with FactSales at the center
-- Dim tables joined via surrogate keys
-- One-to-many relationships maintained
-- Calendar table used for slicing and trends
-
-
-From the above Power BI data model pane image above we can see that a many to one (*:1) was establish between the FactSales  (The Fact Table) an                   
-                                                             4443                    
-                                           
-                                                                                 
-      d Dimensions Table (Product, Customer, and date table).The other tables shown are the Dax measure and measure documentation tables.  
+ 
   
-### DAX Measures Created
 
-- Total Sales = SUM(FactSales[SalesAmount])
-- Gross Profit = SUM(FactSales[GrossProfit])
-- Profit Margin = DIVIDE([Gross Profit], [Total Sales])
-- Net Sales = [Total Sales] - SUM(FactSales[ReturnAmount])
-- YoY Sales = [Total Sales CY] - [Total Sales PY]
-- ROI = DIVIDE([Gross Profit], SUM(FactSales[DiscountAmount]))
 
-### Analysis  
 
-- Channel performance analysis (e.g., Online vs Reseller)
-- Profit Margin trends by product subcategory and region
-- YoY changes to evaluate performance trajectory
-- Customer geography impact on sales volumes
-- Seasonal patterns in Catalog profitability
 
-### Visualization
 
-- KPI Cards (Total Sales, YoY Change, Channel Sales)
-- Donut & Bar Charts (Sales by Channel, Product)
-- Geo Maps (Sales by Country & Region)
-- Line Charts (Sales & Profit over Time)
-- Tree Maps (Brand-wise Sales Split)
+
 
 
 
