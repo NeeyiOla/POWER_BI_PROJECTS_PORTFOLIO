@@ -234,10 +234,20 @@ This table is not needed for now but for future purpose is would be needed so in
 
 # Methodology
 ### Tools Used
-- Microsoft SSMS
-- Power BI Desktop
-- Power Query
-- DAX
+- Microsoft SQL Server Management Studio (SSMS):
+SSMS was primarily used as a data storage and management tool. A DirectQuery connection was established from Power BI Desktop to the SQL Server database, allowing real-time querying of essential tables (e.g., FactSales, DimChannel, DimProduct, DimGeography, etc.). This approach ensured data freshness and reduced duplication during analysis.
+
+- Power BI Desktop:
+The main tool for creating the data model, writing DAX measures, and building interactive reports. It served as the development environment for all dashboards and calculations.
+
+- Power Query:
+Used within Power BI Desktop for the ETL process—cleaning, shaping, and transforming data after extraction via DirectQuery. Operations included column renaming, deleting unwanted columns, type conversion, table joins, filtering, and calculated columns.
+
+- Power Bi Service:
+Dashboards were published to the Power BI Service for stakeholder access, real-time collaboration, and scheduled refresh management. The service also enabled dashboard sharing, mobile access, and usage monitoring.
+
+- GitHub:
+Used to host the documentation, project files (e.g., .pbix, .sql, .md), and provide public access for version control and portfolio presentation. It also served as a backup repository and platform to showcase the project in a professional setting.
 
   ### Development
 
