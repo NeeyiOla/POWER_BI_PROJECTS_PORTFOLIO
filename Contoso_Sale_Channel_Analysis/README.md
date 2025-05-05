@@ -60,27 +60,26 @@ Key business questions included:
 This project resolves these issues by delivering a suite of Power BI dashboards with intuitive visualizations and actionable metrics.
 
 # Stakeholder Engagement
-## Target Stakeholder
+### Target Stakeholder
 
 - Executives (Sales, Marketing, Finance)
 - Regional Managers
-- Channel Analysts
 - Product Strategy Teams
 
-# Use Cases
+### Use Cases
 
-- Compare YoY channel performance
-- Optimize product mix and catalog strategies
-- Localize marketing based on regional sales behavior
+- Sales channel analysis that identify channels KPI's highlighting Total sales with YoY channel performance, breakdown products across all channel and monthly sales trends of across each channel.
+- identifying top performing Brand name for each sale channel, what sales products contributed to it, and brand name performance across sales location.
+- Localise marketing based on regional sales behavior
 - Evaluate channel-specific ROI and margin performance
 
-# Stakeholder Stories
+### Stakeholder Stories
 
 - "As a Channel Manager, I need to see which channels are underperforming YoY so I can act quickly."
 - "As a Marketing Head, I want to know which products have the best margins in each region."
 - "As an Executive, I need to see overall sales, profitability, and performance trends in one dashboard."
 
-# Acceptance Criteria
+### Acceptance Criteria
 
 - Clear display of KPIs: Overall and top 5 brand Total Sales, Profit Margin, YoY Changes
 - Filters for year, region, channel
@@ -88,14 +87,14 @@ This project resolves these issues by delivering a suite of Power BI dashboards 
 - Geo-mapping and trend visuals
 - channels Bookmark button to interchange insights visual chanel profit, trends of sales and profit margin and product subcategory breakdown.
 
-# Success Criteria
+### Success Criteria
 
 - Senior stakeholders can make informed, strategic decisions
 - Analysts gain self-service access to performance metrics
 - Marketing campaigns are aligned with profitable regions/products
 - Product teams reduce inventory waste through data-backed insights
 
-# Data Source
+### Data Source
 
 ### Microsoft SQL Server Management Studio (SSMS) Structure  
 
@@ -242,13 +241,18 @@ This table is not needed for now but for future purpose is would be needed so in
 
   ### Development
 
-  - Connected SQL database sources to Power BI
-  - 
-  - Performed ETL with Power Query (Using direct Query)
+  What is the general approach in creating this solution from start to finish
+
+  - Connected SQL database sources to Power BI (using the direct query)
+  - Performed ETL with Power Query 
   - Cleaned  and joined tables using keys
   - Built star schema with proper cardinality
   - Created a Data table for time intelligence
   - Developed DAX KPI's (Revenue, Margin, Growth, etc.)
+  - Designed and published 3 interactive dashboards
+  - Document every process and commentary
+  - Built and publish interactive dashboards in Power BI service.
+  - Publish the project to GitHub respistory and Pages.
 
 
   ### ETL Process
@@ -264,6 +268,13 @@ This table is not needed for now but for future purpose is would be needed so in
 - Dim tables joined via surrogate keys
 - One-to-many relationships maintained
 - Calendar table used for slicing and trends
+
+
+From the above Power BI data model pane image above we can see that a many to one (*:1) was establish between the FactSales  (The Fact Table) an                   
+                                                             4443                    
+                                           
+                                                                                 
+      d Dimensions Table (Product, Customer, and date table).The other tables shown are the Dax measure and measure documentation tables.  
   
 ### DAX Measures Created
 
