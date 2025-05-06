@@ -435,7 +435,7 @@ RETURN
 
 
 #  Detailed Insights and Recommendation
-### DASHBOARD_1: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Executive Overview)
+### DASHBOARD 1: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Executive Overview)
 
 ![Dashboard 1](Images/DashBoard_1.png)
 
