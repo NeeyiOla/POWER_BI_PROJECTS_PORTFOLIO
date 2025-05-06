@@ -35,7 +35,7 @@
 - [Detailed Insights and Recommendations](#Detailed-Insights-and-Recommendation)
   - [Dashboard 1](#Sales-Pulse-Performance,-Frequency-&-Return-(Executive-Overview))
   - [Dashboard 2](#Sales-Performance-&-Customer-Behaviour-(Net-sales-by-Customer-Demographic))
-  - [Dashboard 3](#Product-portfolio-performance-(Based-on-Gross-Proft))
+  - [Dashboard 3](#Product_portfolio-performance-(Based-on-Gross-Proft))
  
 # Project Title:
 Contoso Competitive Sales Channel Analysis
@@ -432,8 +432,12 @@ RETURN
 - Collected feedback from stakeholders and refined visuals and measures accordingly.
 - Monitored performance and usability, making adjustments to filters, visuals, and tooltips for clarity.
 
+
+
 #  Detailed Insights and Recommendation
 ### DASHBOARD_1: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Executive Overview)
+
+![Dashboard 1](Images/DashBoard_1.png)
 
 **View: Executive Overview | Year: 2008**
 
@@ -509,6 +513,8 @@ Total Sales by Product and Channel
 
 ## Dashboard 2: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Sales by country & Brand(Top5))
 
+![Dashboard 1](Images/DashBoard_2.png)
+
 Focus: Regional sales distribution and brand/channel contribution.
 
 **KPI CARDS(Top Section):**  
@@ -559,6 +565,9 @@ Geographic sales patterns show where to allocate resources. For instance, North 
     - Contoso is a top brand across channels—identify what’s working and apply best practices to underperforming brands.
 
 ## DASHBOARD 3: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Profit Margin)
+
+![Dashboard 1](Images/Store_Profit_Margin_Dashbaord.png)
+
 Focus: Profit Margin (%) | Time Period: 2007–2009
 
 🔑 Key Insights & Visual Interpretation
