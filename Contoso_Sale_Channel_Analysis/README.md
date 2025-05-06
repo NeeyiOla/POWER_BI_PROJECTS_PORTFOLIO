@@ -280,7 +280,7 @@ General Approach to Creating the Solution:
 - Connected Power BI Desktop to SQL Server using DirectQuery to enable real-time data access.
 - Identified and extracted essential tables such as FactSales, DimChannel, DimProduct, DimGeography, and Date.
 
-####Data Exploration & Profiling  
+#### Data Exploration & Profiling  
 
 - Reviewed data structures, row volumes, null values, duplicates, and relationships.
 - Verified foreign key integrity across fact and dimension tables.
