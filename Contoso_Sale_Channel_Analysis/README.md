@@ -435,7 +435,8 @@ RETURN
 
 
 #  Detailed Insights and Recommendation
-### DASHBOARD 1: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Executive Overview)
+### DASHBOARD 1 
+### COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Executive Overview)
 
 ![Dashboard 1](Images/DashBoard_1.png)
 
@@ -511,7 +512,8 @@ Total Sales by Product and Channel
     - Plan promotions and inventory spikes for store sales in Q4.
     - Launch mid-year campaigns to accelerate online sales momentum.
 
-## Dashboard 2: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Sales by country & Brand(Top5))
+## Dashboard 2
+### COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Sales by country & Brand(Top5))
 
 ![Dashboard 1](Images/DashBoard_2.png)
 
@@ -564,7 +566,8 @@ Geographic sales patterns show where to allocate resources. For instance, North 
 5. Evaluate Brand Penetration:
     - Contoso is a top brand across channels—identify what’s working and apply best practices to underperforming brands.
 
-## DASHBOARD 3: COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Profit Margin)
+## DASHBOARD 3
+### COMPETITIVE SALES CHANNEL ANALYSIS REPORT (Profit Margin)
 
 ![Dashboard 1](Images/Store_Profit_Margin_Dashbaord.png)
 
