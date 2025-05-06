@@ -298,7 +298,7 @@ General Approach to Creating the Solution:
 - Ensured appropriate cardinality (e.g., many-to-one) and cross-filter directions.
 - Added a dynamic date dimension for robust time intelligence.
 
-    ##### insight data model image 
+![Contoso semantic model](Images/Contoso_semantic_model.png)
 
 From the above Power BI data model pane image above we can see that a many to one (*:1) was establish between the FactSales  (The Fact Table) and Dimensions Table (Product, Customer, and date table).The other tables shown are the Dax measure and measure documentation tables. 
 
